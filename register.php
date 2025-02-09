@@ -106,7 +106,7 @@ include __DIR__ . '/includes/header.php';
                     <div class="invalid-feedback"><?= $errors['password'] ?></div>
                 <?php endif; ?>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+            <button type="submit" class="btn btn-primary w-100">Registrarse</button>
         </form>
         <div class="mt-3 text-center">
             <span>¿Ya tienes cuenta? <a href="./login.php">Inicia Sesión</a></span>
