@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS gestor_de_tareas_basico;
+
+USE gestor_de_tareas_basico;
+
+CREATE TABLE IF NOT EXISTS users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(16) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(60) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP()
+);
+
+CREATE TABLE IF NOT EXISTS tasks(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    title VARCHAR(30) NOT NULL,
+    description TEXT NOT NULL,
+    complete BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+    CONSTRAINT FOREIGN KEY (user_id) REFERENCES users(id)
+);
