@@ -65,13 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitForm = event => {
         event.preventDefault();
 
-        const username = inputUsername.value;
-        const email = inputEmail.value;
-        const password = inputPassword.value;
-
-        validateUsername(username.trim().toLowerCase());
-        validateEmail(email.trim().toLowerCase());
-        validatePassword(password.trim());
+        validateUsername(inputUsername.value.trim().toLowerCase());
+        validateEmail(inputEmail.value.trim().toLowerCase());
+        validatePassword(inputPassword.value.trim());
 
         if (document.querySelector('div.invalid-feedback')) return;
 

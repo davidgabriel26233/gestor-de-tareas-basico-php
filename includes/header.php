@@ -16,7 +16,7 @@
     <header class="py-3 border-bottom">
         <div class="container-md">
             <div class="row g-3 align-items-center">
-                <?php if (isset($_SESSION['user'])): ?>
+                <?php if (isset($_SESSION['auth'])): ?>
                     <div class="col-8">
                         <h1 class="h4 mb-0 fw-bolder">Gestor De Tareas Basico</h1>
                     </div>

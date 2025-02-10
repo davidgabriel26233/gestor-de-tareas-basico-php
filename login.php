@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['user']) {
+if ($_SESSION['auth']) {
     header('location: ./');
 }
 
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'message' => 'Email o contraseña incorrectos'
                 ];
             } else {
-                $_SESSION['user'] = [
+                $_SESSION['auth'] = [
                     'id' => $user['id'],
                     'username' => $user['username'],
                     'email' => $user['email']

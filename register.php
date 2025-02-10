@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['user']) {
+if ($_SESSION['auth']) {
     header('location: ./');
 }
 
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-        $_SESSION['user'] = [
+        $_SESSION['auth'] = [
             'id' => mysqli_insert_id($conexion),
             'username' => $username,
             'email' => $email

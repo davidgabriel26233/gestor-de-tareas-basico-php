@@ -31,12 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const submitForm = event => {
         event.preventDefault();
-
-        const email = inputEmail.value;
-        const password = inputPassword.value;
-
-        validateEmail(email.trim().toLowerCase());
-        validatePassword(password.trim());
+        
+        validateEmail(inputEmail.value.trim().toLowerCase());
+        validatePassword(inputPassword.value.trim());
 
         if (document.querySelector('div.invalid-feedback')) return;
 
